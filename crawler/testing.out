@@ -1,0 +1,50 @@
+./testing.sh < testing.out
+usage: crawler seedURL pageDirectory maxDepth
+usage: crawler seedURL pageDirectory maxDepth
+error: pageDirectory is not valid
+error: maxDepth is not an int
+error: maxDepth cannot be negative
+error: seedURL is not a valid server
+error: seedURL is not a valid server
+error: nonexistent page
+ 0   Fetched: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+ 0  Scanning: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+ 0     Found: http://cs50tse.cs.dartmouth.edu/tse/letters/A.html
+ 0     Added: http://cs50tse.cs.dartmouth.edu/tse/letters/A.html
+ 1    Fetched: http://cs50tse.cs.dartmouth.edu/tse/letters/A.html
+ 0   Fetched: http://cs50tse.cs.dartmouth.edu/tse/letters/B.html
+ 0  Scanning: http://cs50tse.cs.dartmouth.edu/tse/letters/B.html
+ 0     Found: https://en.wikipedia.org/wiki/Breadth-first_search
+ 0  IgnExtrn: https://en.wikipedia.org/wiki/Breadth-first_search
+ 0     Found: http://cs50tse.cs.dartmouth.edu/tse/letters/C.html
+ 0     Added: http://cs50tse.cs.dartmouth.edu/tse/letters/C.html
+ 0     Found: http://cs50tse.cs.dartmouth.edu/tse/letters/D.html
+ 0     Added: http://cs50tse.cs.dartmouth.edu/tse/letters/D.html
+ 0     Found: http://cs50tse.cs.dartmouth.edu/tse/letters/E.html
+ 0     Added: http://cs50tse.cs.dartmouth.edu/tse/letters/E.html
+ 0     Found: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+ 0     Added: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+ 1    Fetched: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+ 1    Fetched: http://cs50tse.cs.dartmouth.edu/tse/letters/E.html
+ 1    Fetched: http://cs50tse.cs.dartmouth.edu/tse/letters/D.html
+ 1    Fetched: http://cs50tse.cs.dartmouth.edu/tse/letters/C.html
+ 0   Fetched: http://cs50tse.cs.dartmouth.edu/tse//wikipedia/index.html
+ 0  Scanning: http://cs50tse.cs.dartmouth.edu/tse//wikipedia/index.html
+ 0     Found: http://cs50tse.cs.dartmouth.edu/tse//wikipedia/./Computer_science.html
+ 0     Added: http://cs50tse.cs.dartmouth.edu/tse//wikipedia/Computer_science.html
+ 0     Found: http://cs50tse.cs.dartmouth.edu/tse//wikipedia/./C_(programming_language).html
+ 0     Added: http://cs50tse.cs.dartmouth.edu/tse//wikipedia/C_(programming_language).html
+ 0     Found: http://cs50tse.cs.dartmouth.edu/tse//wikipedia/./Unix.html
+ 0     Added: http://cs50tse.cs.dartmouth.edu/tse//wikipedia/Unix.html
+ 0     Found: http://cs50tse.cs.dartmouth.edu/tse//wikipedia/./Dartmouth_College.html
+ 0     Added: http://cs50tse.cs.dartmouth.edu/tse//wikipedia/Dartmouth_College.html
+ 0     Found: http://cs50tse.cs.dartmouth.edu/tse//wikipedia/./Hash_table.html
+ 0     Added: http://cs50tse.cs.dartmouth.edu/tse//wikipedia/Hash_table.html
+ 0     Found: http://cs50tse.cs.dartmouth.edu/tse//wikipedia/./Linked_list.html
+ 0     Added: http://cs50tse.cs.dartmouth.edu/tse//wikipedia/Linked_list.html
+ 1    Fetched: http://cs50tse.cs.dartmouth.edu/tse//wikipedia/Linked_list.html
+ 1    Fetched: http://cs50tse.cs.dartmouth.edu/tse//wikipedia/Hash_table.html
+ 1    Fetched: http://cs50tse.cs.dartmouth.edu/tse//wikipedia/Dartmouth_College.html
+ 1    Fetched: http://cs50tse.cs.dartmouth.edu/tse//wikipedia/Unix.html
+ 1    Fetched: http://cs50tse.cs.dartmouth.edu/tse//wikipedia/C_(programming_language).html
+ 1    Fetched: http://cs50tse.cs.dartmouth.edu/tse//wikipedia/Computer_science.html

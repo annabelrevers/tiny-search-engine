@@ -1,0 +1,98 @@
+bash -v testing.sh
+#!/bin/bash
+#
+# testing.sh executes a sequence of commands that tests querier.c
+# 
+# Annabel Revers, February 2021
+
+# QUERIER TESTING
+
+# wrong number of arguments 
+./querier pageDir
+usage: querier pageDirectory indexFilename
+usage: querier pageDirectory indexFilename
+testing.sh: line 11: usage:: command not found
+usage: querier pageDirectory indexFilename
+testing.sh: line 12: usage:: command not found
+testing.sh: line 11: usage:: command not found
+testing.sh: line 13: testing.sh:: command not found
+
+# wrong number of arguments
+./querier pageDir file1 file2
+usage: querier pageDirectory indexFilename
+usage: querier pageDirectory indexFilename
+testing.sh: line 17: usage:: command not found
+usage: querier pageDirectory indexFilename
+testing.sh: line 18: usage:: command not found
+testing.sh: line 15: usage:: command not found
+testing.sh: line 19: testing.sh:: command not found
+
+# pageDirectory is not a crawler produced directory
+./querier testDir file1
+error: pageDirectory is not a Crawler-produced directory
+error: pageDirectory is not a Crawler-produced directory
+testing.sh: line 23: error:: command not found
+error: pageDirectory is not a Crawler-produced directory
+testing.sh: line 24: error:: command not found
+testing.sh: line 19: error:: command not found
+testing.sh: line 25: testing.sh:: command not found
+
+# indexFilename is not a writeable file (it is a directory)
+./querier data0 filedoesntexist
+error: indexFilename is not a readable file
+error: indexFilename is not a readable file
+testing.sh: line 29: error:: command not found
+error: indexFilename is not a readable file
+testing.sh: line 30: error:: command not found
+testing.sh: line 23: error:: command not found
+testing.sh: line 31: testing.sh:: command not found
+
+# test querier with small set of queries
+cat testquery1 | ./querier data0 index.0
+Query? Query: index and wikipedia 
+Matches 1 documents (ranked):
+score   1 doc  1: http://cs50tse.cs.dartmouth.edu/tse/
+--------------------------------------------
+Query? Query: index or wikipedia toscrape or tse toscrape 
+Matches 1 documents (ranked):
+score   4 doc  1: http://cs50tse.cs.dartmouth.edu/tse/
+--------------------------------------------
+Query? Query: index feb or wikipedia 
+Matches 1 documents (ranked):
+score   3 doc  1: http://cs50tse.cs.dartmouth.edu/tse/
+--------------------------------------------
+Query? Query: timestamp index wikipedia or index or faraday or feb 
+Matches 1 documents (ranked):
+score   5 doc  1: http://cs50tse.cs.dartmouth.edu/tse/
+--------------------------------------------
+Query? Query: toscrape or feb feb wikipedia and feb or toscrape 
+Matches 1 documents (ranked):
+score   3 doc  1: http://cs50tse.cs.dartmouth.edu/tse/
+--------------------------------------------
+Query? 
+# test querier with another set of queries
+cat testquery2 | ./querier data1 index.1
+Query? Query: sapiens and jquery 
+Matches 1 documents (ranked):
+score   1 doc  3: http://cs50tse.cs.dartmouth.edu/tse/toscrape/
+--------------------------------------------
+Query? Query: business or copier xavier or precious tipping 
+Matches 2 documents (ranked):
+score   2 doc  3: http://cs50tse.cs.dartmouth.edu/tse/toscrape/
+score   1 doc  2: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/
+--------------------------------------------
+Query? Query: made locally or results 
+Matches 2 documents (ranked):
+score   1 doc  2: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/
+score   1 doc  3: http://cs50tse.cs.dartmouth.edu/tse/toscrape/
+--------------------------------------------
+Query? Query: timestamp horror write or hearts or faraday or libertarianism 
+Matches 1 documents (ranked):
+score   2 doc  3: http://cs50tse.cs.dartmouth.edu/tse/toscrape/
+--------------------------------------------
+Query? Query: xavier or autobiography erotica health and ratings or copy 
+Matches 2 documents (ranked):
+score   2 doc  2: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/
+score   1 doc  3: http://cs50tse.cs.dartmouth.edu/tse/toscrape/
+--------------------------------------------
+Query? 
